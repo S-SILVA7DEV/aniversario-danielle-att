@@ -364,7 +364,8 @@ ul {
         /* Reduz o padding para o texto não ficar espremido */
         padding: 0 20px;
         /* Ocupa menos altura no telemóvel */
-        height: 70vh; 
+        height: 60vh;
+        background-position: center center; /* Ajusta o foco da imagem */
     }
     
     .hero-title {

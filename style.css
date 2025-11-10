@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+/* --- RESET BÁSICO E TEMA PRINCIPAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* A cor de fundo principal da Netflix */
+    background-color: #141414; 
+    
+    /* A cor do texto principal */
+    color: #ffffff; 
+    
+    /* Uma fonte limpa e moderna. Se não tiver, usa Arial. */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    /* Impede a rolagem horizontal indesejada */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #e5e5e5; /* Cor cinza claro para links */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #b3b3b3; /* Cor ao passar o mouse */
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- 1. BARRA DE NAVEGAÇÃO (NAVBAR) --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 50px; /* Espaçamento interno */
+    
+    /* Fundo semi-transparente que fica sólido ao rolar (faremos com JS) */
+    background-color: transparent; 
+    
+    width: 100%;
+    position: fixed; /* Fica presa no topo */
+    top: 0;
+    z-index: 100; /* Garante que fique acima de tudo */
+    
+    /* Efeito de transição suave para o fundo */
+    transition: background-color 0.4s; 
+}
+
+.navbar-logo img {
+    height: 35px; /* Ajuste o tamanho do seu logo */
+}
+
+.navbar-links {
+    margin-left: 30px;
+}
+
+.navbar-links ul {
+    display: flex;
+}
+
+.navbar-links ul li {
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.navbar-links .active {
+    color: #ffffff; /* Link ativo fica branco */
+}
+
+.navbar-profile {
+    margin-left: auto; /* Joga o perfil para a direita */
+}
+
+.navbar-profile img {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px; /* Borda levemente arredondada */
+    object-fit: cover; /* Garante que a foto não distorça */
+}
+
+/* --- 2. SEÇÃO DE DESTAQUE (HERO) --- */
+.hero-destaque {
+    height: 90vh; /* Ocupa 90% da altura da tela */
+    
+    /* !!!! IMPORTANTE !!!!
+      Coloque sua foto principal (alta resolução) aqui!
+      Ela deve estar na mesma pasta.
+    */
+    background-image: linear-gradient(to right, rgba(20,20,20,0.8), rgba(20,20,20,0)), 
+                      url('imagens/noivadoback.jpg');
+    
+    background-size: cover;
+    background-position: center top; /* Foca no centro e topo da imagem */
+    
+    padding: 0 50px;
+    
+    /* Usamos flexbox para alinhar o conteúdo */
+    display: flex;
+    align-items: center; 
+}
+
+.hero-content {
+    max-width: 500px; /* Limita a largura do texto */
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Tamanho bem grande */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-sinopse {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.hero-button {
+    background-color: #e50914; /* Vermelho Netflix */
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #f40612; /* Vermelho mais brilhante */
+}
+
+/* Efeito de fade na parte de baixo do herói */
+.hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7.4rem;
+    background-image: linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #141414);
+}
+
+/* ... (código anterior do hero-destaque) ... */
+
+
+/* --- 3. LINHA DE CATEGORIAS (CARDS ROLÁVEIS) --- */
+
+.categoria-linha {
+    /* 50px de padding só à esquerda, como na Netflix */
+    padding: 20px 0 20px 50px; 
+    position: relative; /* Necessário para o z-index do hover funcionar */
+}
+
+.categoria-titulo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.categoria-rolagem {
+    display: flex; /* Alinha os cards em linha */
+    overflow-x: scroll; /* Ativa a rolagem horizontal */
+    overflow-y: hidden; /* Esconde a rolagem vertical */
+    padding-bottom: 15px; /* Espaço para a barra de rolagem não ficar colada */
+}
+
+/* Esconde a barra de rolagem (Chrome/Safari/Edge) */
+.categoria-rolagem::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    /* Tamanho do "pôster" do filme. 
+      (200px de largura por 300px de altura).
+    */
+    min-width: 200px; 
+    height: 300px;
+    
+    /* Cor de fundo temporária caso a imagem falhe */
+    background-color: #333; 
+    background-size: cover;
+    background-position: center;
+    
+    margin-right: 10px; /* Espaço entre os cards */
+    border-radius: 5px;
+    
+    cursor: pointer;
+    /* Animação suave para o hover */
+    transition: transform 0.3s ease-out; 
+}
+
+.card:hover {
+    /* O efeito de "zoom" clássico da Netflix */
+    transform: scale(1.1);
+    /* Faz o card pular para frente dos outros */
+    z-index: 10; 
+}
+
+#card-sonho-1 {
+    background-image: url('imagens/nos2.jpg');
+}
+#card-sonho-2 {
+    background-image: url('imagens/nosperfect.jpg');
+}
+#card-sonho-3 {
+    background-image: url('imagens/segurando-mao.jpg');
+}
+#card-sonho-4 {
+    background-image: url(imagens/meu18-3.jpg);
+}
+#card-sonho-5 {
+    background-image: url(imagens/alianca2.jpg);
+}
+
+/* ... (código anterior dos #card-sonho-X) ... */
+#card-sonho-5 {
+    background-image: url(imagens/nosdnv.jpg);
+}
+
+/* --- NOVAS CAPAS (COLEÇÕES / GALERIA) --- */
+
+#card-colecao-1 {
+    background-image: url(imagens/nosperfect.jpg);
+}
+#card-colecao-2 {
+    background-image: url(imagens/beijo-rosto.jpg);
+}
+#card-colecao-3 {
+    background-image: url(imagens/03.jpg);
+}
+#card-colecao-4 {
+    background-image: url(imagens/02.jpg);
+}
+#card-colecao-5 {
+    background-image: url(imagens/04.jpg);
+}
+
+
+/* ... (todo o seu código anterior) ... */
+
+/* --- 4. EFEITOS DE JAVASCRIPT --- */
+
+/* Esta é a "etiqueta" que o JS adiciona.
+   Quando a navbar tiver esta classe, ela ficará preta! 
+*/
+.navbar-scrolled {
+    background-color: #141414; /* O nosso preto principal */
+    
+    /* (Opcional) Uma sombra suave para dar profundidade */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}

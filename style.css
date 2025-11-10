@@ -258,3 +258,70 @@ ul {
     /* (Opcional) Uma sombra suave para dar profundidade */
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* ... (código anterior do .navbar-scrolled) ... */
+
+
+/* --- 5. ESTILOS DO MODAL (POP-UP) --- */
+
+/* O fundo escuro que cobre a página */
+.modal-overlay {
+    position: fixed; /* Fica fixo por cima de tudo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Preto semi-transparente */
+    
+    /* Centra a janela de conteúdo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 1000; /* Acima de tudo, até da navbar */
+    
+    /* COMEÇA ESCONDIDO */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* A janela branca/cinza do conteúdo */
+.modal-content {
+    background-color: #1f1f1f; /* Um cinza escuro, tipo Netflix */
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px; /* Limite máximo de largura */
+    position: relative; /* Para o botão de fechar */
+    
+    /* Efeito de "zoom" ao aparecer */
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+
+/* O 'X' para fechar */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* --- CLASSE DE CONTROLO (QUE O JS VAI USAR) --- */
+
+/* Quando o modal estiver ativo... */
+.modal-overlay.active {
+    /* ...mostra o fundo... */
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay.active .modal-content {
+    /* ...e anima o "zoom" da janela */
+    transform: scale(1);
+}

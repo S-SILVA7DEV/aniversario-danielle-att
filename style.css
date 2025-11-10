@@ -421,3 +421,52 @@ ul {
         font-size: 0.9rem;
     }
 }
+
+/* ... (todo o seu código anterior) ... */
+
+/* --- 7. ESTILOS DA GALERIA DENTRO DO MODAL --- */
+
+.modal-gallery-container {
+    margin-top: 20px; /* Espaço entre a descrição e as fotos */
+    max-height: 40vh; /* Limita a altura para caber no ecrã */
+    overflow-y: auto; /* Adiciona scroll se houver muitas fotos */
+    
+    /* Melhora a barra de scroll no Chrome/Safari */
+    scrollbar-width: thin;
+    scrollbar-color: #555 #1f1f1f;
+}
+
+.modal-gallery-grid {
+    display: grid;
+    /* Cria uma grelha flexível: 
+       Tenta ter colunas de 150px, mas ajusta-se 
+    */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px; /* Espaço entre as fotos */
+}
+
+.gallery-image {
+    width: 100%;
+    height: 150px; /* Altura fixa para as caixas */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir a caixa sem distorcer */
+    transition: transform 0.3s;
+}
+
+.gallery-image img:hover {
+    transform: scale(1.1); /* Efeito de zoom na foto */
+}
+
+/* Ajuste para telemóveis: colunas mais pequenas */
+@media (max-width: 768px) {
+    .modal-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+

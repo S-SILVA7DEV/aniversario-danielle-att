@@ -1,0 +1,63 @@
+/* ... (todo o código anterior da .galeria-grid) ... */
+
+
+/* ==== NOVAS REGRAS PARA A LINHA DO TEMPO (TIMELINE) ==== */
+.detalhe-container  h1, p {
+    margin: 10px;
+}
+.timeline {
+    margin-top: 40px;
+    /* A "linha" vertical da timeline */
+    border-left: 3px solid #e50914; /* Vermelho Netflix */
+    padding-left: 20px;
+}
+
+.episodio {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.episodio-data {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f1f1f1;
+    margin-bottom: 10px;
+}
+
+.episodio-conteudo {
+    background-color: #1f1f1f; /* Fundo cinza escuro */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.episodio-conteudo h2 {
+    font-size: 1.8rem;
+    color: #e50914; /* Título do episódio em vermelho */
+    margin-bottom: 10px;
+}
+
+.episodio-conteudo p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.episodio-conteudo img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* A "bola" na linha do tempo */
+.episodio::before {
+    content: '';
+    position: absolute;
+    left: -32px; /* Puxa para cima da linha */
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #141414;
+    border: 3px solid #e50914;
+    border-radius: 50%;
+    z-index: 1;
+}

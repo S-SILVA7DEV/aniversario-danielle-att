@@ -325,3 +325,98 @@ ul {
     /* ...e anima o "zoom" da janela */
     transform: scale(1);
 }
+
+
+/* ... (todo o seu código anterior) ... */
+
+
+/* =========================================
+   --- 6. REGRAS DE RESPONSIVIDADE (MOBILE) ---
+   (Este bloco aplica-se se o ecrã
+   tiver 768px de largura ou MENOS)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* --- Conserta a Navbar --- */
+    
+    .navbar {
+        padding: 15px 20px; /* Menos espaço nas laterais */
+    }
+
+    .navbar-logo img {
+        height: 30px; /* Logo um pouco menor */
+    }
+
+    /* Esconde os links de texto no telemóvel (muito comum) */
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-profile img {
+        height: 35px;
+        width: 35px;
+    }
+    
+    /* --- Conserta o Destaque (Hero) --- */
+    
+    .hero-destaque {
+        /* Reduz o padding para o texto não ficar espremido */
+        padding: 0 20px;
+        /* Ocupa menos altura no telemóvel */
+        height: 70vh; 
+    }
+    
+    .hero-title {
+        font-size: 2rem; /* Título muito mais pequeno */
+    }
+    
+    .hero-sinopse {
+        font-size: 0.9rem; /* Sinopse mais pequena */
+        line-height: 1.4;
+        /* Limita o número de linhas (opcional) */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Mostra no máx. 3 linhas */
+        -webkit-box-orient: vertical;
+    }
+
+    .hero-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    /* --- Conserta as Linhas de Cards --- */
+
+    .categoria-linha {
+        /* Reduz o padding inicial */
+        padding-left: 20px;
+    }
+    
+    .categoria-titulo {
+        font-size: 1.2rem; /* Título da linha mais pequeno */
+    }
+
+    .card {
+        /* Torna os cards mais pequenos no telemóvel */
+        min-width: 150px; 
+        height: 225px;
+    }
+    
+    /* --- Conserta o Modal (Pop-up) --- */
+
+    .modal-content {
+        /* Ocupa quase 100% da largura */
+        width: 95%; 
+        padding: 20px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+    }
+}

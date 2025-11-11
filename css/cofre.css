@@ -1,0 +1,73 @@
+body {
+    background-color: #141414; /* Nosso fundo Netflix */
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.titulo {
+    font-size: 3rem;
+    color: #e50914; /* Vermelho Netflix */
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    color: #e5e5e5;
+    margin-bottom: 40px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre as caixas */
+}
+
+.box {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+.box span {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.box .legenda {
+    font-size: 0.8rem;
+    color: #e5e5e5;
+    margin-top: 5px;
+}
+
+.mensagem-final {
+    margin-top: 30px;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .titulo { font-size: 2.5rem; }
+    .subtitulo { font-size: 1.2rem; }
+    .countdown {
+        flex-wrap: wrap; /* Deixa quebrar a linha */
+        gap: 10px;
+    }
+    .box {
+        min-width: 70px;
+        padding: 15px;
+    }
+    .box span { font-size: 2rem; }
+}

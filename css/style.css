@@ -95,7 +95,7 @@ ul {
       Ela deve estar na mesma pasta.
     */
     background-image: linear-gradient(to right, rgba(20,20,20,0.8), rgba(20,20,20,0)), 
-                      url('imagens/noivadoback.jpg');
+                      url('../imagens/noivadoback.jpg');
     
     background-size: cover;
     background-position: center top; /* Foca no centro e topo da imagem */
@@ -206,42 +206,42 @@ ul {
 }
 
 #card-sonho-1 {
-    background-image: url('imagens/nos2.jpg');
+    background-image: url('../imagens/nos2.jpg');
 }
 #card-sonho-2 {
-    background-image: url('imagens/nosperfect.jpg');
+    background-image: url('../imagens/nosperfect.jpg');
 }
 #card-sonho-3 {
-    background-image: url('imagens/segurando-mao.jpg');
+    background-image: url('../imagens/segurando-mao.jpg');
 }
 #card-sonho-4 {
-    background-image: url(imagens/meu18-3.jpg);
+    background-image: url(../imagens/meu18-3.jpg);
 }
 #card-sonho-5 {
-    background-image: url(imagens/alianca2.jpg);
+    background-image: url(../imagens/alianca2.jpg);
 }
 
 /* ... (código anterior dos #card-sonho-X) ... */
 #card-sonho-5 {
-    background-image: url(imagens/nosdnv.jpg);
+    background-image: url(../imagens/nosdnv.jpg);
 }
 
 /* --- NOVAS CAPAS (COLEÇÕES / GALERIA) --- */
 
 #card-colecao-1 {
-    background-image: url(imagens/nosperfect.jpg);
+    background-image: url(../imagens/nosperfect.jpg);
 }
 #card-colecao-2 {
-    background-image: url(imagens/beijo-rosto.jpg);
+    background-image: url(../imagens/beijo-rosto.jpg);
 }
 #card-colecao-3 {
-    background-image: url(imagens/03.jpg);
+    background-image: url(../imagens/03.jpg);
 }
 #card-colecao-4 {
-    background-image: url(imagens/02.jpg);
+    background-image: url(../imagens/02.jpg);
 }
 #card-colecao-5 {
-    background-image: url(imagens/04.jpg);
+    background-image: url(../imagens/04.jpg);
 }
 
 

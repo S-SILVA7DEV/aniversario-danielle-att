@@ -1,6 +1,4 @@
-// --- CONFIGURAÇÃO ---
-// Esta é a data de aniversário da Dani.
-// Formato: Ano, Mês (0=Jan, 1=Fev, ... 11=Dez), Dia
+
 const dataAlvo = new Date(2025, 11, 22, 0, 0, 0).getTime();
 
 // --- ELEMENTOS DO HTML ---
@@ -10,28 +8,26 @@ const minutosEl = document.getElementById('minutos');
 const segundosEl = document.getElementById('segundos');
 const mensagemFinalEl = document.getElementById('mensagem-final');
 
-// --- FUNÇÃO DO COUNTDOWN ---
-// Atualiza o contador a cada 1 segundo
+// --- FUNÇÃO DO CONTADOR
 const intervalo = setInterval(() => {
 
-    // Pega a data e hora de AGORA
+    
     const agora = new Date().getTime();
     
-    // Calcula a distância entre agora e a data alvo
+
     const distancia = dataAlvo - agora;
 
-    // Se o tempo acabou...
+
     if (distancia < 0) {
-        clearInterval(intervalo); // Para o contador
+        clearInterval(intervalo); 
         
-        // !!! A PARTE MAIS IMPORTANTE !!!
-        // Redireciona para o "Nossa Flix"
+
         window.location.href = "perfis.html"; 
         
-        return; // Sai da função
+        return; 
     }
 
-    // Cálculos de tempo
+
     const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));

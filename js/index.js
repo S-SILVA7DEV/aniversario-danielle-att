@@ -44,9 +44,9 @@ const intervalo = setInterval(() => {
     minutosEl.innerText = formatar(minutos);
     segundosEl.innerText = formatar(segundos);
     
-    // (Opcional) Pisca a mensagem final no último dia
+    
     if (dias === 0) {
         mensagemFinalEl.innerText = "É HOJE!";
     }
 
-}, 1000); // 1000ms = 1 segundo
+}, 1000); 
